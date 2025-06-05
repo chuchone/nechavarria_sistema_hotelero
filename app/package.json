@@ -1,0 +1,27 @@
+{
+  "name": "proyecto_2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chuchone/nechavarria_sistema_hotelero.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chuchone/nechavarria_sistema_hotelero/issues"
+  },
+  "homepage": "https://github.com/chuchone/nechavarria_sistema_hotelero#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "pg": "^8.16.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
