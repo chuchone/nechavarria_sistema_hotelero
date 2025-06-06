@@ -1,3 +1,2 @@
-\target\
-\conectores.json\
-\.env\
+/target/
+/.env/
