@@ -1,0 +1,23 @@
+<%- include('../partials/layout', { title: 'Hoteles' }) %>
+
+<div class="hotel-container">
+  <aside class="sidebar">
+    <% sections.forEach(section => { %>
+      <a href="#<%= section %>" class="nav-link"><%= section.toUpperCase() %></a>
+    <% }); %>
+  </aside>
+
+  <div class="content">
+    <section id="habitaciones">
+      <h2>Habitaciones</h2>
+      <!-- Contenido dinámico desde API -->
+    </section>
+
+    <section id="tarifas">
+      <h2>Tarifas por Temporada</h2>
+      <!-- Usar Fetch/AJAX para cargar datos -->
+    </section>
+  </div>
+</div>
+
+<script src="/js/hotels.js"></script>

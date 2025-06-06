@@ -1,7 +1,16 @@
-const os =  require('node:os')
+import { configureAuth } from './auth/config.js';
+import authRoutes from './auth/routes.js';
 
-console.log('Informacion del sistema operativo:')
-console.log("..............-----...............")
-console.log("nombre del sistema operativo", os.platform())
-console.log("version del sistema operativo", os.release())
-console.log("arquitectura del sistema operativo", os.arch())
+const app = express();
+
+// Configura autenticación
+configureAuth(app);
+
+// Usa las rutas de autenticación
+app.use(authRoutes);
+
+// Middleware para pasar user a las vistas
+app.use((req, res, next) => {
+  res.locals.user = req.user || null;
+  next();
+});
