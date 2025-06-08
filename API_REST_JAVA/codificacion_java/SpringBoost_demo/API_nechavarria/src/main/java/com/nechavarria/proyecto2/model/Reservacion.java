@@ -3,9 +3,9 @@ package com.nechavarria.proyecto2.model;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class Reservaciones {
+public class Reservacion {
 
-    /*
+
     public static int reservacion_id;
 
     public Integer hotel_id;
@@ -22,10 +22,10 @@ public class Reservaciones {
     public String codigo_reserva;
 
     // Constructor vacío para frameworks
-    public Reservaciones() {}
+    public Reservacion() {}
 
     // Constructor con campos obligatorios
-    public Reservaciones(LocalDate fecha_entrada, LocalDate fecha_salida,
+    public Reservacion(LocalDate fecha_entrada, LocalDate fecha_salida,
                          int adultos, String estado, String tipo_reserva, int id_habitacion) {
         this.fecha_entrada = fecha_entrada;
         this.fecha_salida = fecha_salida;
@@ -39,5 +39,5 @@ public class Reservaciones {
     public static void set_id (int id) {
         reservacion_id = id;
     }
-    */
+
 }

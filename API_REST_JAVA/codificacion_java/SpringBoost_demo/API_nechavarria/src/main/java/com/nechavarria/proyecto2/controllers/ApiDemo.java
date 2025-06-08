@@ -1,6 +1,6 @@
 package com.nechavarria.proyecto2.controllers;
 
-import com.nechavarria.proyecto2.model.clientes;
+//import com.nechavarria.proyecto2.model.Clientes;
 import com.nechavarria.proyecto2.repository.ClienteRepository;
 import com.nechavarria.proyecto2.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("api")
 public class ApiDemo  {
-
+/*
     @Autowired
     ClienteService clienteService;
 
@@ -48,5 +48,5 @@ public class ApiDemo  {
             return "No se puede eliminar el usuario";
         }
     }
-
+*/
 }

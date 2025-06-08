@@ -1,4 +1,4 @@
-package com.nechavarria.proyecto2.controllers;
+package com.nechavarria.proyecto2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

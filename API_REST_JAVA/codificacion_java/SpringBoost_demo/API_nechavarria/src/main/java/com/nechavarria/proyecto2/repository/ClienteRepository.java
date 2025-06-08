@@ -1,7 +1,13 @@
 package com.nechavarria.proyecto2.repository;
 
-import com.nechavarria.proyecto2.model.clientes;
-import org.springframework.data.repository.CrudRepository;
+import com.nechavarria.proyecto2.model.Cliente;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface ClienteRepository extends CrudRepository<clientes, Integer> {
+import java.util.List;
+
+@Repository
+public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
+    List<Cliente> findByNombreContainingIgnoreCaseAndEmailContainingIgnoreCaseAndNacionalidadContainingIgnoreCase(
+            String nombre, String email, String nacionalidad);
 }

@@ -1,13 +1,17 @@
 package com.nechavarria.proyecto2.service;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
-import com.nechavarria.proyecto2.model.clientes;
+import com.nechavarria.proyecto2.model.Cliente;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface ClienteService {
-    ArrayList<clientes> getAllUser();
-    Optional<clientes> getUserById(Integer id);
-    clientes saveUser(clientes cliente);
-    String deleteUserById(Integer id);
+    Cliente crearCliente(Cliente cliente);
+    Optional<Cliente> obtenerClientePorId(Integer id);
+    List<Cliente> obtenerTodos(String nombre, String email, String nacionalidad);
+    Cliente actualizarCliente(Integer id, Cliente cliente);
+    boolean eliminarCliente(Integer id);
 }
