@@ -1,4 +1,4 @@
-package com.nechavarria.proyecto2.model;
+package com.nechavarria.proyecto2.model.entity;
 
 public class Habitaciones {
   /*  public static int habitacion_id;

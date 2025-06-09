@@ -1,7 +1,7 @@
 package com.nechavarria.proyecto2.controllers;
 
-import com.nechavarria.proyecto2.model.Cliente;
-import com.nechavarria.proyecto2.service.ClienteService;
+import com.nechavarria.proyecto2.model.entity.Cliente;
+import com.nechavarria.proyecto2.model.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

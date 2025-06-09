@@ -1,8 +1,7 @@
-package com.nechavarria.proyecto2.model;
+package com.nechavarria.proyecto2.model.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "clientes")
@@ -42,15 +41,14 @@ public class Cliente {
     @Column(name = "password_hash")
     private String passwordHash;
 
-    @Column(name = "fecha_nacimiento")
-    private LocalDate fechaNacimiento;
+
 
     // Constructor vacío para frameworks
     public Cliente() {}
 
     // Constructor con campos obligatorios
     public Cliente(String nombre, String apellido, String documento_identidad, String tipo_documento ,
-                    String nacionalidad, String telefono, String email) {
+                   String nacionalidad, String telefono, String email) {
         this.nombre = nombre +" "+ apellido;
         this.documentoIdentidad = documento_identidad;
         this.tipoDocumento = tipo_documento;
@@ -72,14 +70,6 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public LocalDate fechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public Cliente setFechaNacimiento(LocalDate fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-        return this;
-    }
 
     public String tipoDocumento() {
         return tipoDocumento;

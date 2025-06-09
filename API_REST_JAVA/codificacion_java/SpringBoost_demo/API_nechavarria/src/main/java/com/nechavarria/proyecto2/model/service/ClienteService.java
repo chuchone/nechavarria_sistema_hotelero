@@ -1,10 +1,9 @@
-package com.nechavarria.proyecto2.service;
+package com.nechavarria.proyecto2.model.service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import com.nechavarria.proyecto2.model.Cliente;
+import com.nechavarria.proyecto2.model.entity.Cliente;
 import org.springframework.stereotype.Service;
 
 @Service

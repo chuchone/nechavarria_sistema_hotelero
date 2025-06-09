@@ -1,12 +1,11 @@
-package com.nechavarria.proyecto2.service;
+package com.nechavarria.proyecto2.model.service;
 
-import com.nechavarria.proyecto2.model.Cliente;
-import com.nechavarria.proyecto2.repository.ClienteRepository;
-import com.nechavarria.proyecto2.repository.ReservacionRepository;
+import com.nechavarria.proyecto2.model.entity.Cliente;
+import com.nechavarria.proyecto2.model.repository.ClienteRepository;
+import com.nechavarria.proyecto2.model.repository.ReservacionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,7 +16,7 @@ public class ClienteServiceImpl implements ClienteService {
     private ClienteRepository repo;
 
     @Autowired
-    private ReservacionRepository reservacionRepo; // Para verificar restricciones
+    private ReservacionRepository reservacionRepo;
 
     @Override
     public Cliente crearCliente(Cliente cliente) {
@@ -48,7 +47,7 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public boolean eliminarCliente(Integer id) {
-        if (reservacionRepo.existsByClienteIdAndActivaTrue(id)) {
+        if (reservacionRepo.existsByClienteIdAndEstado(id, "confirmada")) {
             return false;
         }
         repo.deleteById(id);

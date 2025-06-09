@@ -1,4 +1,4 @@
-package com.nechavarria.proyecto2.model;
+package com.nechavarria.proyecto2.model.entity;
 
 import java.time.LocalDateTime;
 import java.math.BigDecimal;

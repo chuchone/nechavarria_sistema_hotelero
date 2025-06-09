@@ -1,6 +1,6 @@
-package com.nechavarria.proyecto2.repository;
+package com.nechavarria.proyecto2.model.repository;
 
-import com.nechavarria.proyecto2.model.Cliente;
+import com.nechavarria.proyecto2.model.entity.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
