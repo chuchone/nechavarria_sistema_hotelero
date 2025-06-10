@@ -1,10 +1,13 @@
 package com.nechavarria.proyecto2.model.service;
 
+import com.nechavarria.proyecto2.capaDatos.ValidacionesFormato;
 import com.nechavarria.proyecto2.model.entity.Cliente;
 import com.nechavarria.proyecto2.model.repository.ClienteRepository;
 import com.nechavarria.proyecto2.model.repository.ReservacionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import static com.nechavarria.proyecto2.capaDatos.ValidacionesFormato.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,7 +23,7 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public Cliente crearCliente(Cliente cliente) {
-        validarEmail(cliente.getEmail());
+        ValidacionesFormato.validarEmail(cliente.getEmail());
         return repo.save(cliente);
     }
 
@@ -54,9 +57,5 @@ public class ClienteServiceImpl implements ClienteService {
         return true;
     }
 
-    private void validarEmail(String email) {
-        if (!email.matches("^(.+)@(.+)$")) {
-            throw new IllegalArgumentException("Formato de email inválido.");
-        }
-    }
+
 }
