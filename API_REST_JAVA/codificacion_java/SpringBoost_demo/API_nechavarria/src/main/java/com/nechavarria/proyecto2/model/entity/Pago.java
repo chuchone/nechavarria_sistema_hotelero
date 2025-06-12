@@ -1,21 +1,67 @@
 package com.nechavarria.proyecto2.model.entity;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 import java.math.BigDecimal;
 
+
+/*
+ * AUTOR: NELSON CHAVARRIA
+ * NOTES: ELABORADO DE FORMA QUE LO SIGUIENTE SE ESTÉ IMPLEMENTADO CORRECTAMENTE
+ * id_reservacion, monto, metodo_pago (tarjeta, efectivo, transferencia), fecha_pago, referencia_pago
+ **/
+
+
+/*
+ * AUTOR: NELSON CHAVARRIA
+ * NOTES: Implementacion de la base de datos
+ * Cuerpo:
+ *
+ *
+ * sistema-hotelero=> \d pagos;
+                                              Tabla ½public.pagos╗
+    Columna     |            Tipo             | Ordenamiento | Nulable  |              Por omisi¾n
+----------------+-----------------------------+--------------+----------+----------------------------------------
+ pago_id        | integer                     |              | not null | nextval('pagos_pago_id_seq'::regclass)
+ reservacion_id | integer                     |              |          |
+ monto          | numeric(10,2)               |              | not null |
+ metodo_pago    | character varying(50)       |              | not null |
+ fecha_pago     | timestamp without time zone |              |          | CURRENT_TIMESTAMP
+ estado         | character varying(20)       |              | not null |
+ referencia     | character varying(100)      |              |          |
+ descripcion    | text                        |              |          |
+ **/
+@Entity
+@Table(name = "pagos")
 public class Pago {
-    /*
-    public int pago_id;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "pago_id")
+    private int pago_id;
 
+    @ManyToOne
+    @JoinColumn(name = "reservacion_id", nullable = false)
+    private Reservacion reservacion;
 
-    public Integer reservacion_id;
-    public BigDecimal monto;
-    public String metodo_pago;
-    public LocalDateTime fecha_pago;
-    public String estado;
-    public String referencia;
-    public String descripcion;
+    @Column(name = "monto")
+    private BigDecimal monto;
+
+    @Column(name = "metodo_pago", nullable = false, length = 100)
+    private String metodo_pago;
+
+    @Column(name = "fecha_pago")
+    private LocalDateTime fecha_pago = LocalDateTime.now();
+
+    @Column(name = "estado")
+    private String estado;
+
+    @Column(name = "referencia")
+    private String referencia;
+
+    @Column(name = "descripcion")
+    private String descripcion;
 
     // Constructor vacío para frameworks
     public Pago() {}
@@ -27,5 +73,76 @@ public class Pago {
         this.estado = estado;
         this.fecha_pago = LocalDateTime.now();
     }
-    */
+
+    public int pago_id() {
+        return pago_id;
+    }
+
+    public Pago setPago_id(int pago_id) {
+        this.pago_id = pago_id;
+        return this;
+    }
+
+    public Reservacion reservacion() {
+        return reservacion;
+    }
+
+    public Pago setReservacion(Reservacion reservacion) {
+        this.reservacion = reservacion;
+        return this;
+    }
+
+    public BigDecimal monto() {
+        return monto;
+    }
+
+    public Pago setMonto(BigDecimal monto) {
+        this.monto = monto;
+        return this;
+    }
+
+    public String metodo_pago() {
+        return metodo_pago;
+    }
+
+    public Pago setMetodo_pago(String metodo_pago) {
+        this.metodo_pago = metodo_pago;
+        return this;
+    }
+
+    public LocalDateTime fecha_pago() {
+        return fecha_pago;
+    }
+
+    public Pago setFecha_pago(LocalDateTime fecha_pago) {
+        this.fecha_pago = fecha_pago;
+        return this;
+    }
+
+    public String estado() {
+        return estado;
+    }
+
+    public Pago setEstado(String estado) {
+        this.estado = estado;
+        return this;
+    }
+
+    public String referencia() {
+        return referencia;
+    }
+
+    public Pago setReferencia(String referencia) {
+        this.referencia = referencia;
+        return this;
+    }
+
+    public String descripcion() {
+        return descripcion;
+    }
+
+    public Pago setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+        return this;
+    }
 }

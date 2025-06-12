@@ -12,37 +12,53 @@ public class Hotel {
     @Column(name = "hotel_id")
     private Integer id;
 
-    @Column(nullable = false, length = 100)
+    @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
 
-    @Column(nullable = false, columnDefinition = "text")
+    @Column(name = "direccion", nullable = false, columnDefinition = "text")
     private String direccion;
 
-    @Column(nullable = false, length = 50)
+    @Column(name = "ciudad",nullable = false, length = 50)
     private String ciudad;
 
-    @Column(nullable = false, length = 50)
+    @Column(name = "pais",nullable = false, length = 50)
     private String pais;
 
-    @Column(nullable = false, length = 20)
+    @Column(name = "telefono",nullable = false, length = 20)
     private String telefono;
 
-    @Column(nullable = false, length = 100)
+    @Column(name = "direccion",nullable = false, length = 100)
     private String email;
 
-    @Column
+    @Column(name = "estrellas")
     private Integer estrellas;
 
-    @Column
+    @Column(name = "activo")
     private Boolean activo = true;
 
     @Column(name = "fecha_apertura")
     private LocalDate fechaApertura;
 
-    @Column(columnDefinition = "text")
+    @Column(name = "descripcion")
     private String descripcion;
 
+
+    public Hotel() {}
+
+    public Hotel (String nombre, String direccion, String ciudad, String pais, String telefono, String descripcion){
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.ciudad = ciudad;
+        this.pais = pais;
+        this.telefono = telefono;
+        this.descripcion = descripcion;
+    }
+
+
     // Getters y Setters
+
+
+
 
     public Integer getId() {
         return id;

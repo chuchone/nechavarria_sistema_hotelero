@@ -3,6 +3,15 @@ package com.nechavarria.proyecto2.model.entity;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
+
+
+/*
+ * AUTOR: NELSON CHAVARRIA
+ * NOTES: ELABORADO DE FORMA QUE LO SIGUIENTE SE ESTÉ IMPLEMENTADO CORRECTAMENTE
+ * id_cliente, id_habitacion, fecha_entrada, fecha_salida, numero_huespedes, solicitudes_especiales
+ **/
+
 
 @Entity
 @Table(name = "reservaciones")
@@ -22,7 +31,7 @@ public class Reservacion {
     private Cliente cliente;
 
     @Column(name = "fecha_creacion")
-    private LocalDateTime fechaCreacion;
+    private LocalDateTime fechaCreacion = LocalDateTime.now();
 
     @Column(name = "fecha_entrada", nullable = false)
     private LocalDate fechaEntrada;
@@ -30,23 +39,33 @@ public class Reservacion {
     @Column(name = "fecha_salida", nullable = false)
     private LocalDate fechaSalida;
 
-    @Column(nullable = false)
-    private Integer adultos;
-
-    @Column
-    private Integer ninos = 0;
+    @Column(name = "huespedes")
+    private Integer numero_huespedes;
 
     @Column(nullable = false, length = 20)
-    private String estado;
+    private String estado = "confirmada"; // Partiendo de que si se crea el objeto, es porque se confirmó
 
     @Column(name = "tipo_reserva", nullable = false, length = 20)
     private String tipoReserva;
 
     @Column(name = "solicitudes_especiales", columnDefinition = "text")
-    private String solicitudesEspeciales;
+    private String solicitudesEspeciales = "No se especifica";
 
     @Column(name = "codigo_reserva", length = 20)
     private String codigoReserva;
+
+
+    public Reservacion (){}
+
+    public Reservacion (Hotel hotel, Cliente cliente, LocalDateTime fechaSalida, LocalDateTime fechaEntrada, Integer numero_huespedes, String solicitudesEspeciales) {
+        this.hotel = hotel;
+        this.cliente = cliente;
+        this.fechaEntrada = LocalDate.from(fechaEntrada);
+        this.fechaSalida = LocalDate.from(fechaSalida);
+        this.numero_huespedes = numero_huespedes;
+        this.solicitudesEspeciales = solicitudesEspeciales;
+    }
+
 
     // Getters y Setters
 
@@ -98,21 +117,6 @@ public class Reservacion {
         this.fechaSalida = fechaSalida;
     }
 
-    public Integer getAdultos() {
-        return adultos;
-    }
-
-    public void setAdultos(Integer adultos) {
-        this.adultos = adultos;
-    }
-
-    public Integer getNinos() {
-        return ninos;
-    }
-
-    public void setNinos(Integer ninos) {
-        this.ninos = ninos;
-    }
 
     public String getEstado() {
         return estado;

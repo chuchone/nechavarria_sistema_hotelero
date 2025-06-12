@@ -12,7 +12,7 @@ public class Cliente {
     @Column(name = "cliente_id")
     private Integer id;
 
-    @Column(nullable = false, length = 100)
+    @Column(name = "nombre")
     private String nombre;
 
     @Column(name = "documento_identidad", nullable = false, length = 20)
@@ -21,13 +21,13 @@ public class Cliente {
     @Column(name = "tipo_documento", nullable = false, length = 20)
     private String tipoDocumento;
 
-    @Column(nullable = false, length = 50)
+    @Column(name = "nacionalidad", nullable = false, length = 50)
     private String nacionalidad;
 
-    @Column(nullable = false, length = 20)
+    @Column(name = "telefono", nullable = false, length = 20)
     private String telefono;
 
-    @Column(nullable = false, length = 100)
+    @Column(name = "email",nullable = false, length = 100)
     private String email;
 
     @Column(name = "fecha_registro")
