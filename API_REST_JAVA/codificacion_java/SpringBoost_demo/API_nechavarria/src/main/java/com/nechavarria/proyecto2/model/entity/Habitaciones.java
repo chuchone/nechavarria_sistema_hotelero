@@ -1,7 +1,16 @@
 package com.nechavarria.proyecto2.model.entity;
 
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "habitaciones")
 public class Habitaciones {
-  /*  public static int habitacion_id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "habitacion_id")
+    public static int habitacion_id;
 
     public int hotel_id;
     public String numero;
@@ -27,9 +36,13 @@ public class Habitaciones {
         this.precio_noche = precio;
 
     }
+
+    // Construir logica para asignar tipo
+
+
     public void setHotel_id(int habitacion_id) {
         this.habitacion_id = habitacion_id;
     }
 
-   */
+
 }
