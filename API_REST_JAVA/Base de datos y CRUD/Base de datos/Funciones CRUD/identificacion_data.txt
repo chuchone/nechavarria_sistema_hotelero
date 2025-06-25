@@ -1,0 +1,30 @@
+
+Método | Endpoint | Parámetros esperados| Requiere autenticación| Observaciones adicionales
+
+POST | /pagos | id_reservacion, monto, metodo_pago (tarjeta, efectivo, transferencia), fecha_pago, referencia_pago | sí |Actualiza estado a "Confirmada" si aplica
+
+GET | /pagos/{id} | id_pago | Sí | no aplica
+
+GET | /pagos | (opcional: id_cliente, fecha_pago, metodo_pago) | Sí | no aplica 
+
+
+DO $$
+DECLARE
+    res_id INTEGER;
+    mensaje TEXT;
+BEGIN
+    CALL sp_crear_reservacion(
+        2,               -- Cliente ID
+        5,             -- Habitación ID
+        '2025-07-10',    -- Fecha entrada
+        '2025-07-12',    -- Fecha salida
+        3,               -- Número de huéspedes
+        'Sin solicitudes especiales',
+        120.50,          -- Tarifa
+        res_id,
+        mensaje
+    );
+
+    RAISE NOTICE 'Mensaje: %', mensaje;
+    RAISE NOTICE 'ID Reservación: %', res_id;
+END $$;

@@ -19,6 +19,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
 app.use((req, res, next) => {
   // Puedes obtener el usuario de la sesión si usas autenticación
   res.locals.user = req.session.user || null; // Si no hay sesión, será null

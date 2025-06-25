@@ -13,25 +13,6 @@ import java.math.BigDecimal;
  **/
 
 
-/*
- * AUTOR: NELSON CHAVARRIA
- * NOTES: Implementacion de la base de datos
- * Cuerpo:
- *
- *
- * sistema-hotelero=> \d pagos;
-                                              Tabla ½public.pagos╗
-    Columna     |            Tipo             | Ordenamiento | Nulable  |              Por omisi¾n
-----------------+-----------------------------+--------------+----------+----------------------------------------
- pago_id        | integer                     |              | not null | nextval('pagos_pago_id_seq'::regclass)
- reservacion_id | integer                     |              |          |
- monto          | numeric(10,2)               |              | not null |
- metodo_pago    | character varying(50)       |              | not null |
- fecha_pago     | timestamp without time zone |              |          | CURRENT_TIMESTAMP
- estado         | character varying(20)       |              | not null |
- referencia     | character varying(100)      |              |          |
- descripcion    | text                        |              |          |
- **/
 @Entity
 @Table(name = "pagos")
 public class Pago {
