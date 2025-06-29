@@ -1,5 +1,5 @@
 package com.nechavarria.proyecto2.controllers;
-
+/*
 import com.nechavarria.proyecto2.model.dto.ReservacionDto;
 import com.nechavarria.proyecto2.model.entity.Reservacion;
 import com.nechavarria.proyecto2.model.service.ReservacionService;
@@ -43,3 +43,4 @@ public class ReservacionController {
         return ResponseEntity.notFound().build();
     }
 }
+*/

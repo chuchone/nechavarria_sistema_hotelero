@@ -10,6 +10,8 @@ package com.nechavarria.proyecto2.model.entity;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "habitaciones")
 public class Habitaciones {
@@ -17,7 +19,7 @@ public class Habitaciones {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "habitacion_id")
-    private static int habitacion_id;
+    private Integer habitacion_id;
 
     @ManyToOne
     @JoinColumn(name = "hotel_id", referencedColumnName = "hotel_id")
@@ -33,7 +35,7 @@ public class Habitaciones {
     private Integer tipo_id = 3; // POR DEFECTO, SE PUEDE HACER UN SET PERFECTAMENTE
 
     @Column(name = "precio_habitacion")
-    private double precio_noche;
+    private BigDecimal precio_noche;
 
     @Column(name = "esta_ocupada")
     private boolean disponibilidad;
@@ -55,7 +57,7 @@ public class Habitaciones {
     public Habitaciones() {}
 
     // Constructor con campos obligatorios
-    public Habitaciones(String numero, String descripcion, double precio_noche, boolean disponibilidad) {
+    public Habitaciones(String numero, String descripcion, BigDecimal precio_noche, boolean disponibilidad) {
         this.numero = numero;
         this.descripcion = descripcion;
         this.precio_noche = precio_noche;
@@ -63,12 +65,12 @@ public class Habitaciones {
 
     }
 
-    public static int habitacion_id() {
+    public  int habitacion_id() {
         return habitacion_id;
     }
 
-    public static void setHabitacion_id(int habitacion_id) {
-        Habitaciones.habitacion_id = habitacion_id;
+    public  void setHabitacion_id(int habitacion_id) {
+        this.habitacion_id = habitacion_id;
     }
 
     public Hotel hotel() {
@@ -107,11 +109,11 @@ public class Habitaciones {
         return this;
     }
 
-    public double precio_noche() {
+    public BigDecimal precio_noche() {
         return precio_noche;
     }
 
-    public Habitaciones setPrecio_noche(double precio_noche) {
+    public Habitaciones setPrecio_noche(BigDecimal precio_noche) {
         this.precio_noche = precio_noche;
         return this;
     }

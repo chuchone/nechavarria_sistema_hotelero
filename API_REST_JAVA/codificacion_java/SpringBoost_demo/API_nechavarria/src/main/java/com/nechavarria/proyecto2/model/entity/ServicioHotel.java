@@ -37,7 +37,7 @@ public class ServicioHotel {
 
     public String horario_disponibilidad = "No definido";
 
-    @Column(name = "precio_base") // post
+    @Column(name = "activo") // post
     public boolean disponible = true;
 
     // Constructor vacío para frameworks

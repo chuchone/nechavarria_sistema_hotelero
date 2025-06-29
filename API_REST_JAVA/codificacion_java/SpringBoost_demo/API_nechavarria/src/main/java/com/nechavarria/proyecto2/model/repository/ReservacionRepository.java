@@ -23,4 +23,6 @@ public interface ReservacionRepository extends JpaRepository<Reservacion, Intege
     );
 
     List<Reservacion> findByClienteId(Integer clienteId);
+
+    boolean existsByClienteIdAndEstado(Integer id, String confirmada);
 }

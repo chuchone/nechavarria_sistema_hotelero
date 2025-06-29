@@ -27,7 +27,7 @@ public class Hotel {
     @Column(name = "telefono",nullable = false, length = 20)
     private String telefono;
 
-    @Column(name = "direccion",nullable = false, length = 100)
+    @Column(name = "email",nullable = false, length = 100)
     private String email;
 
     @Column(name = "estrellas")
